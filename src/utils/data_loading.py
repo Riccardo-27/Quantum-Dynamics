@@ -57,9 +57,13 @@ def load_dataset(
     time_path = os.path.join(data_dir, "time_grid.npy")
     csv_path = os.path.join(data_dir, "trajectories.csv")
 
-    if not force_recompute and os.path.exists(npy_path) and os.path.exists(time_path):
+    if not force_recompute and os.path.exists(npy_path):
         features = np.load(npy_path)
-        time_grid = np.load(time_path)
+        if os.path.exists(time_path):
+            time_grid = np.load(time_path)
+        else:
+            time_grid = np.linspace(0.0, 20.0, features.shape[1], dtype=np.float32)
+            np.save(time_path, time_grid)
         return features, time_grid
 
     return convert_csv_to_npy(csv_path, npy_path, time_path)
