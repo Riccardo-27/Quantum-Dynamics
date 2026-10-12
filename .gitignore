@@ -18,6 +18,7 @@ __pycache__/
 data/*.csv
 data/*.npy
 data/*.npz
+!data/split_indices.npz
 data/*.pt
 data/*.h5
 data/*.parquet
