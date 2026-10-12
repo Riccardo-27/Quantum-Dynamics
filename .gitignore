@@ -1,0 +1,48 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Dataset (pesante: 463 MB, non versionare su Git)
+data/*.csv
+data/*.npy
+data/*.npz
+data/*.pt
+data/*.h5
+data/*.parquet
+
+# Pesi e Checkpoint dei modelli
+checkpoints/
+results/checkpoints/
+*.pt
+*.pth
+*.keras
+*.h5
+*.ckpt
+*.onnx
+
+# IDE e OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# File di riferimento locale (non versionare)
+README_reference.md
+README_friends.md
+
+# Output temporanei e log
+*.log
+scratch/
